@@ -1,0 +1,58 @@
+<!-- Kargo AdLiberator Tag Generator >
+<img width="1" height="1" alt="" style="position: absolute; left: -9999px;" src="%%VIEW_URL_UNESC%%" />
+<img src="data:platform,kargo" style="display:none;" onerror="
+    window.dlm_uuid = '%%PATTERN:uuid%%';
+    var kxkar_user = localStorage.getItem('kxkar_user');
+    var kid;
+    var name = 'krg_uid=';
+    var ca = document.cookie.split(';');
+    var referer = '';
+    if (window.location && window.parent && window.parent.location) {
+      referer = '&ref=' + window.location !== window.parent.location ? document.referrer : document.location.href;
+    }
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        kid = JSON.parse(decodeURIComponent(c.substring(name.length,c.length))).v.userId;
+      }
+    }
+    (function(img) {
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('frameborder', 'none');
+        iframe.setAttribute('scrolling', 'no');
+        iframe.setAttribute('style', 'position:relative;display:inline-block;;width:300px;height:250px;border:0;top:0;left:0;background:#000000;overflow:hidden;z-index:2147483647;');
+        iframe.src = 'https://storage.cloud.kargo.com/kbr/prod/905fca0e-0d02-59b2-b063-2f1401a3d218/index-exposed.html?uuid={UUID}&kid=' + kid + '&kuid=' + kxkar_user + referer;
+        img.parentNode.appendChild(iframe);
+    })(this);
+">
+<img width="1" height="1" alt="" style="position: absolute; left: -9999px;" src="https://tk.kargo.com/t/impression.ywzkerk308ykh3?rand=%%CACHEBUSTER%%&kid=%%PATTERN:kid%%&kuid=%%PATTERN:kuid%%&uuid=%%PATTERN:uuid%%&aslot={AD_SLOT}&krg_imp_id={IMP_ID}&url=" />
+<!--
+"krg_ad_info":{
+    "creativeId": 678,
+    "vendor": {},
+    "format": "MiddleBanner",
+    "execution": "",
+    "creativeOrigin": "creative_builder",
+    "placement": {
+        "type": ""
+    },
+    "asdata": {
+        "sitid": "%esid!",
+        "advid": "%eadv!",
+        "camid": "%ebuy!",
+        "linid": "%eaid!",
+        "creid": "%ecid!",
+        "aduid": "%epid!",
+        "size": {
+            "w": "%%WIDTH%%",
+            "h": "%%HEIGHT%%"
+        }
+    },
+    "settings": {
+        "tracking": []
+    }
+}
+-->
